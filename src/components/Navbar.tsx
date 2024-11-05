@@ -20,18 +20,17 @@ const Navbar = () => {
                 Home
               </Link>
               <Link to="/docs" className="text-gray-300 hover:text-white px-3 py-2 rounded-md flex items-center">
-                <Book className="w-4 h-4 mr-1" />
                 Docs
               </Link>
-              {isConnected && (
-                <Link to="/dashboard" className="text-gray-300 hover:text-white px-3 py-2 rounded-md flex items-center">
-                  <LayoutDashboard className="w-4 h-4 mr-1" />
-                  Dashboard
-                </Link>
-              )}
             </div>
           </div>
-          <div>
+          <div className={"flex items-center justify-between h-16 gap-4"}>
+            {isConnected && (
+              <Link to="/dashboard" className="text-gray-300 hover:text-white px-3 py-2 rounded-md flex items-center">
+                <LayoutDashboard className="w-4 h-4 mr-1" />
+                Dashboard
+              </Link>
+            )}
             <button
               onClick={isConnected ? disconnect : connect}
               className="flex items-center px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 transition-colors"
